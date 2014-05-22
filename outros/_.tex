@@ -1,0 +1,249 @@
+\documentclass[pdftex,12pt,a4paper]{report}
+
+\usepackage[portuguese,english]{babel}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[pdftex]{graphicx}
+\usepackage{minitoc}
+\usepackage{hyperref}
+\usepackage{indentfirst}
+\usepackage[compact]{titlesec}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{}
+\renewcommand*\thesection{\thechapter\arabic{section}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\begin{document} 
+
+\input{./titulo.tex} %Titulo do Relatorio
+\renewcommand{\headrulewidth}{0pt}
+
+%Parte do resumo!
+\vspace*{\fill}
+\textbf{Resumo:}
+\begingroup
+Temos como objetivo para este relatório, apresentar de forma clara o nosso raciocínio e plano de uma possível participação no concurso \emph{Robô Bombeiro}. Iremos, também, apresentar o código programado no Detinchanting para a resolução da maior parte dos problemas que o robô teria de superar, bem como os sensores e equipamentos que seriam necessários adicionar ao robô DETIPic para atingir os objetivos do concurso. Por fim, iremos fazer uma análise das possíveis falhas que poderiam ocorrer.
+\endgroup
+\vspace*{\fill}
+%Parte do resumo!
+\newpage
+
+%Renomear Comandos
+\renewcommand*\contentsname{Conteúdos}
+\renewcommand*\figurename{Figura}
+
+%Conteúdos, dar paragrafo
+\tableofcontents
+%Headers
+\renewcommand{\headrulewidth}{0.15pt}
+\lhead{Planeamento de uma prova no concurso Robô Bombeiro}
+\renewcommand{\thechapter}{}
+
+\clearpage
+
+\section{Parte Introdutória}
+
+\subsection{Introdução} 
+Com este relatório pretende-se fazer um estudo teórico para o uso do robô DETIPic da unidade curricular, na participação do concurso Robô Bombeiro, realizado todos os anos no Instituto Politécnico da Guarda. Iremos descrever todas as etapas que seriam necessárias para conseguirmos uma boa participação neste concurso, desde o estudo do equipamento necessário a acrescentar ao robô DETIPic à delineação de uma estratégia de uso do bónus, para obtermos a melhor pontuação e eficácia possível. Sendo este um estudo teórico, não poderemos testar o comportamento do robô, porém tentaremos apresentar uma análise preliminar clara, que facilite uma possível participação tendo como base este estudo.
+
+\subsection{Descrição do problema}
+O robô, para a participação neste concurso, terá de navegar por um circuito constituído por quatro quartos e corredores até identificar uma vela acesa dentro de um dos quartos. 
+
+De seguida o robô deverá proceder à extinção da vela sem a derrubar, usando um dos métodos de extinção permitidos. 
+
+Teremos de ter em atenção as opções/ bónus a escolher e quais são obrigatórios na divisão em que iremos participar.
+
+Durante o percurso o robô não poderá chocar com as paredes, nem utilizar meios de extinção da chama da vela que tornem o circuito inviável para os concorrentes seguintes.
+
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.45\textwidth]{./imagens/mapa}}}
+\caption{Mapa base do labirinto }\label{mapa}
+\end{figure}
+
+\clearpage
+\subsection{Software e equipamento}
+
+	Para participação no concurso utilizaremos o \textbf{robô DETI PIC}
+com 3 sensores de distância que cobrem um ângulo aproximadamente de 45 graus para cada lado (frente, esquerda e direita), 5 sensores de brilho na base inferior (2 do lado esquerdo, 2 do lado direito e 1 ao centro), 4 leds\footnotemark\footnotetext{Light Emitting Diode}  programáveis, 2 motores elétricos para a locomoção do robô e será acrescentado um equipamento de extinção de vela e sensores de deteção de chama. O robô dispõe também de dois botões, um interruptor e uma porta USB\footnotemark\footnotetext{Universal Serial Bus}. 
+
+	O \textbf{software} utilizado para a programar o comportamento do robô na prova foi o Detinchanting que tem como base o Enchan\-ting\footnotemark\footnotetext{\url{http://enchanting.robôclub.ab.ca/tiki-index.php}} (adaptação do Scratch), que utiliza uma interface gráfica que permite que os programas sejam montados em blocos.
+	
+	Iremos acrescentar um \textbf{equipamento de extinção de vela a ar} no centro do robô direcionado para o topo da vela, um ventilador\cite{Ventilador:28122012} 12v centrífugo de alta pressão com um fluxo de ar de 7cfm\footnotemark\footnotetext{Cubic Feet per Minute of airflow} $\approx$ 25 PSI\footnotemark\footnotetext{Pounds per square inch} permitindo que a chama da vela seja completamente extinta com 100\% de eficácia. De notar que iríamos estudar em laboratório qual seria a melhor maneira de configurar este equipamento de forma a que a chama seja extinta de forma eficaz sem derrubar a vela.
+	
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.5\textwidth]{./imagens/ventiladorcentrifugo}}}
+\caption{Ventilador 12v centrífugo \cite{Ventilador:28122012}}\label{ventilador}
+\end{figure}
+	
+\clearpage
+
+	Para detetar a chama iremos utilizar um \textbf{sensor de deteção de chama} unidirecional colocado no centro do robô sendo este capaz de detetar a frequência/ comprimento de onda/ temperatura da radiação emitida, para tal usamos um sensor infravermelho pois é o sensor mais apropriado para detetar a presença e a frequência/ comprimento de onda/ temperatura da radiação emitida por uma chama de uma vela. 
+	
+	Através de um sensor de infravermelhos conseguimos saber em que direção é emitido maior temperatura e obtendo um intervalo de valores referente ao comprimento de onda da radiação emitida por uma chama de uma vela conseguimos saber em que direção se encontra a vela pois vamos utilizar um sensor unidirecional.
+	
+	Dispensamos o uso de sensores ultravioleta pois estes sensores tinham uma maior capacidade de detetar luz solar e radiações de menor comprimento de onda/ maior frequência do que a radiação emitida por uma chama de uma vela.
+
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.5\textwidth]{./imagens/esquemasensorIV}}}
+\caption{Esquema de deteção da vela pelo sensor}\label{esquemasensor}
+\end{figure}
+
+
+\clearpage
+\section{Resolução do Problema}
+
+\subsection{Bónus/ Opções}
+
+	Os bónus/ opções/ modos são fatores que reduzem percentualmente o tempo total e que normalmente estão associados a graus de dificuldade que o robô se depara no decorrer do percurso. Estes são escolhidos pelo participante e transmitidos ao júri antes de iniciar o percurso com o robô.
+	
+	Não vamos optar pela \textbf{“Arbitrary Start”} pois pensamos que se definirmos o percurso que o robô tem de efetuar teremos mais probabilidades em conseguir encontrar a vela do que se usarmos este modo. Definimos que o robô entra no primeiro quarto tendo para isso indicado a posição inicial do robô e após ter verificado o primeiro quarto (quarto no meio, quarto ilha) irá de encontro aos outros quartos.
+	
+	Também não vamos usar o bónus de \textbf{“Return Trip”} pois o programa que usamos para elaborar código não nos permitia elaborar uma solução eficiente tendo em conta o nosso raciocínio para fazer a viagem de regresso ao \emph{“Home Circle”}, de referir que até poderíamos conseguir que o robô voltasse ao \emph{“Home Circle”} mas não seria o percurso mais rápido nem eficiente portanto optámos por não usar este bónus. 
+	
+	Não iremos igualmente considerar o modo \textbf{“Furniture”} e \textbf{“Coat Tree”} pois poderia tapar a visão do robô ao entrar no quarto e ele poderia não ter perceção da existência da vela.
+	
+	No caso do bónus do \textbf{“Uneven Floor”} este é obrigatório na categoria em que iremos participar (Sénior)\footnotemark\footnotetext{\emph{"Uneven Floor Mode is required for robots competing in the Senior Division." - \cite{RoboBombeiro}}}, no entanto não necessitamos de tomar precauções para o robô ultrapassar esta dificuldade.
+	
+	Vamos optar pelo bónus de \textbf{“Variable Door Locations”} pois a programação que elaborámos não está dependente da localização das portas.
+ 	
+ 	Por último escolhemos o bónus \textbf{“Candle Location”} já que o nosso robô consegue ter uma visão completa da sala pois ao entrar no quarto ele executa aproximadamente duas voltas à procura da chama da vela. Não necessitamos da circunferência que sinalizava a vela pois ele deteta a presença da vela tendo em conta a distância obtida no sensor do centro do robô e a frequência/ comprimento de onda obtido pelo sensor IV. Sabemos que neste modo o robô não necessita de estar a pelo menos 30 cm da vela antes de a extinguir, portanto depois iremos definir uma distância para tal. No entanto o robô necessita de sinalizar a deteção da vela acendendo os LED's antes de extinguir a vela.
+
+\subsection{Procedimento}
+
+Em primeiro lugar tendo em conta o nosso diagrama de estados \ref{diagrama}, criámos 2 variáveis para a velocidade dos motores, a \emph{VelocidadeNormal} (70) e a \emph{VelocidadeBaixa} (50). Criámos ainda uma vaiável \emph{Distância} (12 cm) para termos uma referência da distância ideal a que o robô deveria estar da parede de forma a segui-la sem colisões, e ainda 3 variáveis, \emph{DistanciaDireita}, \emph{DistanciaEsquerda} e \emph{DistanciaCentro}, para medir a distancia a objetos nos sensores direito, esquerdo e centro. Por fim criámos uma variável \emph{Estado} com o valor 0 e uma variável \emph{Vela} com \emph{false}. A primeira serviu para a alteração de estados e a segunda para indicar se uma vela teria sido detetada ou não.
+
+De seguida criámos dentro de um bloco \emph{forever}, um bloco \emph{if}, com o argumento de que apenas quando o botão vermelho tivesse sido carregado, é que o robô daria início aos restantes blocos.
+
+O primeiro bloco com instruções para o robô foi um \emph{repeat until} para que o robô vire ligeiramente para esquerda (rodar o motor direito a uma velocidade maior que o esquerdo) até que não detete branco com os sensores de luz, ou seja sairia do \emph{"Home Circle"}.
+
+Criámos a seguir, outro bloco \emph{forever} e \emph{if}, com o argumento de que se o \emph{Estado} fosse 0, daria início ao seguimento da parede. Quando isto acontecia, se a \emph{DistânciaEsquerda}, medida pelo sensor esquerdo fosse maior que a distância pré definida na variável \emph{Distancia}, o robô estava a mais de 12cm da parede esquerda, ou seja, teria de ter mais velocidade no motor direito (\emph{VelociadadeNormal}) e menos no motor esquerdo (\emph{VelocidadeBaixa}), para desta forma o robô virar para a esquerda e aproximar-se da parede. 
+
+No caso de a variável \emph{DistanciaEsquerda} ter um valor inferior à variável \emph{Distancia}, o robô estaria a menos de 12cm da parede, pelo que seria necessário o robô afastar-se da parede, ou seja, teria de ter mais velocidade no motor esquerdo (\emph{VelociadadeNormal}) e menos no motor direito (\emph{VelocidadeBaixa}), para desta forma o robô virar para a direita e afastar-se da parede. No caso de o robô seguir a parede do lado direito, iria comportar-se de forma similar porém no caso de estar muito próximo da parede, teria de ter mais velocidade no motor direito para desta forma se afastar da parede e no caso contrário de estar afastado da parede, teria de ter mais velocidade no motor esquerdo para se conseguir aproximar. Em qualquer um dos casos, o robô apenas realizava estes blocos se os sensores na parte de baixo do robô não detetassem luz.
+
+Para o caso de encontrar uma linha branca, o robô deveria alterar o seu estado. Para isso criámos um bloco \emph{if} com o argumento de que se não detetasse preto, ou seja, tinha encontrado uma linha branca, o robô deveria alterar a variável \emph{Estado} para 1.
+
+\newpage
+De seguida criámos um bloco \emph{if} para quando o \emph{Estado} era 1, ou seja, o robô estaria à porta de um quarto. Neste caso, fizemos reset ao \emph{timer} de modo a este ser usado no próximo bloco \emph{repeat until}, que tem como argumento de que enquanto o \emph{timer} não atingir os 500 milésimos de segundos ou que o robô se encontre a menos de 5 centímetros de um objeto, irá andar em frente com os dois motores à \emph{VelocidadeNormal}. Deste modo o robô entra no quarto e pode dar início à verificação se existe alguma vela. Para isso fizemos novamente reset ao \emph{timer} e criámos um bloco \emph{repeat until} com o argumento de que enquanto o \emph{timer} fosse menor que 2 segundos ou fosse de encontrada uma vela, o robô rodaria sobre si mesmo, rodando o motor direito para a frente e o esquerdo para trás a uma velocidade reduzida (\emph{VelocidadeBaixa}). No caso do sensor IV detetar um comprimento de onda ou uma frequência que esteja dentro do intervalo pré definido no \emph{predicate intervalo}\footnotemark\footnotetext{Este intervalo de valores referente à frequência ou comprimento de onda de uma chama de uma vela seria obtido por nós em laboratório tendo em conta os valores devolvidos pelo sensor IV.}, ou seja, tinha detetado a vela, alterava a variável \emph{Vela} para \emph{true}.
+
+Criámos um \emph{if - else} para o caso de a vela ser encontrada ou não. No caso em que a vela não era encontrada, o robô deveria seguir as paredes internas do quarto, até encontrar a linha branca que sinaliza a porta do quarto. O comportamento neste caso é similar ao verificado no \emph{Estado 0}. Quando encontrasse a linha branca daria de novo início ao seguimento das paredes para ir para outro quarto (\emph{Estado 0}).
+
+No caso de a vela ser detetada no quarto, a variável \emph{Estado} é alterada para 2, andando o robô na direção da vela e acendendo os Leds sempre que encontrasse a vela. Para isso criámos um bloco \emph{if} para que se o sensor detetasse a vela e estivesse a uma distância maior 10, andaria com os dois motores a uma velocidade reduzida (VelocidadeBaixa) e acendia todos os Leds. Se o sensor deixasse de detetar a vela, o robô voltaria a rodar sobre si mesmo, com os Leds desligados, até que voltasse a encontrar a direção correta da vela. Quando estivesse a menos de 10 centímetros da vela, daria início à sua extinção. Utilizámos um bloco \emph{repeat until} para que se ligasse o ventilador até que o sensor de IV não detetasse a presença de uma vela, ou seja, tinha extinto a chama com sucesso, não sendo necessário elaborar nenhum procedimento para uma eventual falha na eficácia do mecanismo de extinção.
+
+Não elaborámos nenhum procedimento para ultrapassar as dificuldades que os bónus acrescentam ao circuito pois estas não alteram o comportamento do robô.
+
+\clearpage
+\subsection{Diagrama de estados}
+
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.8\textwidth]{./imagens/Diagrama1.png}}}
+\caption{Diagrama de estados do procedimento do robô}\label{diagrama}
+\end{figure}
+
+\subsection{Resultados}
+
+Não podemos observar o comportamento do robô numa situação real mas iremos apresentar um possível resultado \ref{resultado} obtido tendo em conta o nosso procedimento na resolução do problema.
+
+O robô deverá iniciar o seu movimento assim que o júri carregar no botão vermelho do nosso robô (visto este não ter nenhum botão verde).
+De seguida o robô deverá virar ligeiramente para a esquerda, saindo do \emph{"Home Circle"}, e irá seguir a parede do lado esquerdo (parede exterior ao quarto ilha), até que encontre a linha branca à porta do quarto. Quando isso acontecer, o robô deverá andar em frente para o interior do quarto e rodar sobre si mesmo durante dois segundos para verificar a existência da vela. Se o robô detetar a vela, deverá ir ao seu encontro, ligando os leds, e assim que estivesse à distância pré-definida ligar o ventilador para extinção da chama. 
+\newpage
+
+
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.5\textwidth]{./imagens/esquema_hipotetico.png}}}
+\caption{Esquema de um resultado hipotético da resolução do problema}\label{resultado}
+\end{figure}
+
+
+No caso de não encontrar a vela neste quarto, deverá seguir a parede interior do quarto até encontrar de novo a saída do mesmo. Nessa situação deverá andar em frente e seguir uma parede do circuito (corredor) até encontrar uma linha e entrar noutro quarto e verificar mais uma vez a existência da vela. Se encontrar uma rampa o robô não deverá alterar o seu comportamento.
+
+
+\subsection{Análise dos Resultados}
+%Descrever, interpretar o resultado anterior
+
+Tendo em conta que não testamos o robô para ver possíveis falhas na nossa resolução e que o robô teria os motores calibrados para andar à mesma velocidade, iremos apresentar os pontos principais em que se poderia melhorar a performance do robô bem como explicar o raciocínio que tivemos em algumas situações.
+
+No primeiro caso em que colocamos o robô a virar ligeiramente à esquerda, pensámos desta forma para que o primeiro quarto a ser verificado pelo robô fosse o quarto ilha. 
+
+Se encontrar uma rampa, "Uneven Floor", ele não se iria confundir pois esta não interfere com nenhum dos sensores nem comportamento do robô.
+
+Para a deteção da vela, sabendo que o sensor consegue medir a frequência/ comprimento de onda/ temperatura da radiação detetada e conseguimos saber em que direção o robô deteta maior temperatura e sabendo um intervalo estimado\footnotemark\footnotetext{Calculado com base em experiências de laboratório com o nosso robô.} do comprimento de onda/ frequência/ temperatura da radiação emitida pela chama de uma vela conseguimos ter perceção da existência da vela.
+
+Para confirmar que existe vela ou não no quarto o robô entraria no quarto entre 3 a 6 cm no quarto e rodaria aproximadamente duas vezes sobre si mesmo para detetar e confirmar a presença de radiação referente à chama de uma vela permitindo assim despistar interferências de flashes de fotógrafos ou outro corpo que emita radiação detetável pelos sensores e que possa confundir o robô. 
+
+Se ao rodar  detetasse radiação que se assemelhe à presença de uma vela ele iria  seguir esta frequência/ comprimento de onda/ temperatura detetado e se deixasse de detetar iria rodar sobre si mesmo outra vez até que encontrasse uma radiação que se assemelhe à presença de uma vela, depois iria seguir a direção obtida e iria prosseguir na direção da vela até que esteja a 10 cm da vela.
+	
+Analisando os valores devolvidos pelo sensor infravermelho e pelo sensor de distância da frente conseguimos saber se nos estamos a aproximar na direção correta da vela e saber exatamente em que local o robô deve parar para extinguir a mesma. 
+
+Na situação em que o robô sai do quarto, nós colocamos no código que este deveria seguir a parede interna até que encontrasse de novo a linha branca, porém poderíamos ter optado por pôr o robô a seguir em frente sem embater nas paredes, já que depois de rodar sobre si mesmo, segundo os nossos cálculos , ficaria virado para a saída, pelo que teria apenas de andar em frente.
+
+Considerámos que o robô nunca voltaria ao \emph{"Home Circle"} mas sabemos que se por alguma razão voltar ele poderá ficar perdido pois o fundo do \emph{"Home Circle"} é um circulo branco de 30cm de diâmetro o que poderá causar confusão ao robô e pensar que é um quarto e efetuar os procedimentos previstos para esse estado no entanto sabemos que teríamos de testar para ver se ele ultrapassaria este problema.
+
+
+
+\clearpage
+\section{Final}
+
+\subsection{Conclusões}
+Com a realização deste trabalho, na nossa opinião, ficaram claros todos principais aspetos relevantes para a participação com sucesso no concurso do Robô Bombeiro realizado todos os anos no Instituto Politécnico da Guarda.
+
+Como se trata apenas de um estudo preliminar, teria de se testar, adaptar o código e o robô DETIPic para uma possível participação. 
+
+Em suma, este trabalho contribuiu para desenvolver as nossas capacidades de lógica e resolução de problemas complexos utilizando o robô DETIPic tendo em conta diferentes condicionantes e regras que tivemos de cumprir.
+
+\clearpage
+\section{Anexos}
+\subsection{Listagem do código}
+
+Pode obter a listagem de código aqui: \url{http://iect.av.it.pt/~p4g4/print5.gif}
+
+%ESTADO 0
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.7\textwidth]{./imagens/estado0}}}
+\caption{Resolução do problema até ao Estado 0}\label{estado0}
+\end{figure}
+
+%ESTADO 1
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.9\textwidth]{./imagens/estado1}}}
+\caption{Resolução do problema, Estado 1}\label{estado1}
+\end{figure}
+
+%ESTADO 2
+\begin{figure}[h]
+\centerline{\fbox{\includegraphics[width=0.8\textwidth]{./imagens/estado2}}}
+\caption{Resolução do problema, Estado 2}\label{estado2}
+\end{figure}
+
+%Referencias
+\renewcommand{\bibname}{Referências}
+
+\begin{thebibliography}{99}
+
+\bibitem{Zuquete:01012013}
+A.V.C.M. Zúquete , Site da Unidade Curicular - Introdução à Engenharia de Computadores e Telemática (1 Janeiro 2013).
+\newblock Diapositivos: robô DETI PIC [Online]
+\newblock {\em Available: } \url{http://www.ieeta.pt/~avz/Aulas/IECT/12-13/docs/6-robo.pdf}
+
+\bibitem{Zuquete:Guiao6}
+A. Zúquete, D. Gomes, J. Barraca, Site da Unidade Curricular - Introdução à Engenharia de Computadores e Telemática (1 Janeiro 2013).
+\newblock Guião da aula prática 6 [Online]
+\newblock {\em Available: } \url{http://www.ieeta.pt/~avz/Aulas/IECT/12-13/docs/guiao-6.pdf}
+
+\bibitem{Zuquete:26122012}
+A. Zúquete, D. Gomes, J. Barraca, Site da Unidade Curricular - Introdução à Engenharia de Computadores e Telemática (26 Dezembro 2012).
+\newblock Planeamento de uma prova no concurso Robô Bombeiro [Online]
+\newblock {\em Available: } \url{http://www.ieeta.pt/~avz/Aulas/IECT/12-13/docs/projeto.pdf}
+
+\bibitem{RoboBombeiro}
+Guarda Polytechnic Institute - Fire-Fighting Robot Contest (24 Dezembro 2012).
+\newblock Robô Bombeiro 2012 Rules [Online]
+\newblock {\em Available: } \url{http://robobombeiro.ipg.pt/RB/pt/Rules_RB_2012.pdf}
+
+\bibitem{Ventilador:28122012}
+Ningbo Donglai Motor Co., Ltd. - ©1999-2012 Alibaba.com (28 Dezembro 2012).
+\newblock Ventilador Ar 12v mini [Online]
+\newblock {\em Available: } \url{http://portuguese.alibaba.com/product-gs/air-blower-12v-with-mini-size-285925291.html}
+
+\end{thebibliography}
+
+\end{document}
