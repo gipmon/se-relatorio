@@ -25,7 +25,7 @@
 
 %Parte do resumo!
 \vspace*{\fill}
-\textbf{Introdução?? Reusmo??:}
+\textbf{Introdução  d  ?? Reusmo??:}
 \begingroup
 normalmente a introdução é feita 
 \endgroup
@@ -150,7 +150,93 @@ Como podemos verificar na imagem abaixo, o circuito ficou limitado a 1,8 V como 
 \endminipage\hfill
 \end{figure}
 
-\section{Parte III - Aplicações	de	Circuitos	Lógicos	CMOS}
+\subsection{Função lógica implementada pelos circuitos anteriores}
+A função implementada pelo díodo é um AND. 
 
+\begin{table}[h]
+\centerline{
+\begin{tabular}{|l|l|l|}
+\hline
+$Vi_1$ & $Vi_2$ & $V_0$ \\ \hline
+0 & 0 & 0 \\ \hline
+0 & 1 & 0 \\ \hline
+1 & 0 & 0 \\ \hline
+1 & 1 & 1  \\ \hline
+\end{tabular}}
+\caption{\\Função lógica do Díodo (AND)}\label{fig:fig_diodo}
+\end{table}
+
+Se as duas entradas estiverem a 0, a corrente vai fluir através de ambos os díodos, ficando $V_0$ a  0V.
+
+Para ambas as entradas a 1, a corrente não flui porque o díodo fica em corte, então $V_0$ $\simeq$ $V_{DD}$, ou seja, 1 lógico.
+
+Se uma das entradas estiver a 0, a corrente vai fluir através dela baixando a tensão $V_0$ para o valor da queda nesse díodo.
+
+
+
+\newpage
+
+\begin{figure}[h]
+  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/cmos_grafico.jpg}}}
+  \caption{DIODOODO FALTAA!!! \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
+\end{figure}
+
+A função lógica implementada pelos quatro circuitos (BJT, NMOS, PMOS e CMOS) é um NOT.
+
+\begin{table}[h]
+\centerline{
+\begin{tabular}{|l|l|l|}
+\hline
+$V_{in}$ & $V_{out}$ \\ \hline
+0 & 1 \\ \hline
+1 & 0 \\ \hline
+\end{tabular}}
+\caption{\\Função lógica do BJT, \\NMOS, PMOS e CMOS (NOT)}\label{fig:fig_diodo}
+\end{table}
+
+No caso do BJT e NMOS quando $V_i$/$V_{in}$ é 1 lógico (+5V), há queda de tensão de $V_{DD}$ para a terra, ficando 0V em $V_0$.
+
+\begin{figure}[!htb]
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/BJT.jpg}}}
+  \caption{\\Função lógica \\implementada pelo BJT. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
+\endminipage\hfill
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/NMOS.jpg}}}
+  \caption{\\Função lógica \\implementada pelo NMOS. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{fig:nmos}
+\endminipage\hfill
+\end{figure}
+
+\newpage
+Para o PMOS quando $V_{in}$ é 0 lógico (0V), $V_{OUT}$ é igual a $V_{DD}$.
+
+\begin{figure}[h]
+  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/cmos_grafico.jpg}}}
+  \caption{Função lógica implementada pelo PMOS. \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
+\end{figure}
+
+No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente passando $V_{DD}$ e $M_2$ fica em corte, ficando portanto $V_{OUT}$ = $V_{DD}$.
+
+\begin{figure}[h]
+  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/cmos_grafico.jpg}}}
+  \caption{\\Função lógica implementada pelo CMOS. \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
+\end{figure}
+
+\newpage
+\subsection{Voltagetransfercharacteristic (VTC) de cada um dos circuitos.}
+\begin{figure}[!htb]
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/BJT.jpg}}}
+  \caption{\\VTC díodo. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
+\endminipage\hfill
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/NMOS.jpg}}}
+  \caption{\\VTC CMOS. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{fig:nmos}
+\endminipage\hfill
+\end{figure}
+
+
+\section{Parte III - Aplicações	de	Circuitos	Lógicos	CMOS}
+dfh
 
 \end{document}
