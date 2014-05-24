@@ -211,7 +211,7 @@ No caso do BJT e NMOS quando $V_i$/$V_{in}$ é 1 lógico (+5V), há queda de ten
 Para o PMOS quando $V_{in}$ é 0 lógico (0V), $V_{OUT}$ é igual a $V_{DD}$.
 
 \begin{figure}[h]
-  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/cmos_grafico.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/pmos_grafico.jpg}}}
   \caption{Função lógica implementada pelo PMOS. \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
 \end{figure}
 
@@ -223,7 +223,7 @@ No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente 
 \end{figure}
 
 \newpage
-\subsection{Voltagetransfercharacteristic (VTC) de cada um dos circuitos.}
+\subsection{Voltage Transfer Characteristic (VTC) de cada um dos circuitos}
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
   \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/BJT.jpg}}}
@@ -246,8 +246,50 @@ No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente 
 \endminipage\hfill
 \end{figure}
 
+\subsection{Comparação dos VTC das quatro portas}
 
+\subsection{Medição e comparação do tempo de propagação de cada gate ligando um condensador}
+
+O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela responde a uma mudança nas suas entradas. O atraso associado a uma mudança H $\rightarrow$ L na saída designa-se por $t_{pHL}$ e uma mudança de L $\rightarrow$ H é $t_{pLH}$. Então o $t_p$ é a media:
+
+\centerline{$t_p = \frac{t_{pHL}+t_{pLH}}{2}$}
+
+\newpage
 \section{Parte III - Aplicações	de	Circuitos	Lógicos	CMOS}
-dfh
+\begin{figure}[h]
+  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/parte3circuito1.jpg}}}
+  \caption{$V_{tr}$ = $V_{DD}$ e R = 1k$\Omega$}\label{cmos}
+\end{figure}
+
+\subsection{Tabela de verdade de um NAND}
+
+\begin{table}[h]
+\centerline{
+\begin{tabular}{|l|l|l|}
+\hline
+$V_{tr}$ & $V_{i}$ & $V_{0}$ \\ \hline
+0 & 0 & 1 \\ \hline
+0 & 1 & 1 \\ \hline
+1 & 0 & 1 \\ \hline
+1 & 1 & 0 \\ \hline
+\end{tabular}}
+\caption{\\Tabela de verdade de um NAND \\implementado pelo circuito}\label{fig:fig_diodo}
+\end{table}
+
+\newpage
+\subsection{Valores de $V_{iH}$ e de $V_{iL}$}
+\begin{figure}[h]
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/parte3circuito2.jpg}}}
+  \caption{$V_{tr}$=$V_{DD}$, R=1k$\Omega$, $R_1$=100k$\Omega$ e C=10nF}\label{cmos}
+\end{figure}
+\newpage
+
+\subsection{Verificar que o circuito funciona como gerador de onda rectangular e registar os valores de saída}
+
+\subsection{Comparar a amplitude do sinal de $V_1$ com $V_{iH}$ e de $V_{iL}$.}
+
+\subsection{drfhra}
+
+\subsection{dfh}
 
 \end{document}
