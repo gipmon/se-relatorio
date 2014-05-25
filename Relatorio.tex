@@ -56,7 +56,7 @@ normalmente a introdução é feita
 \subsection{Característica i-v de um díodo} 
 \hbox{\emph{\textbf{Pergunta 1:}}\newline\newline}
 
-Para calcular a característica i-v de um díodo, usando os valores obtidos no osciloscópio e a fórmula $i = \frac{V\textsubscript{i}-V\textsubscript{0}}{R}$ obtemos a seguinte tabela e gráfico:\newline
+Para calcular a característica i-v de um díodo, usando os valores obtidos no osciloscópio e a fórmula $i = \frac{V\textsubscript{i}-V\textsubscript{0}}{R}$ (A) obtemos a seguinte tabela e gráfico:\newline
 
 \minipage{0.65\textwidth}
 \begin{tikzpicture}
@@ -86,30 +86,34 @@ Para calcular a característica i-v de um díodo, usando os valores obtidos no o
 \caption{Modo \textit{xy} observado no osciloscópio (2V/div) ambos}\label{grafico_1c_osciloscopio}
 \end{figure}
 
-\clearpage
+Este resultado aproxima-se do esperado, tendo em conta erros de precisão do material usado e de leitura.
+
 \subsection{Formas de onda de V\textsubscript{in}(t)  e V\textsubscript{out}(t) quando a amplitude de V\textsubscript{in}(t) = 0.2V e de V\textsubscript{in}(t) = 2V}
 \hbox{\emph{\textbf{Pergunta 2:}}\newline}
 As duas ondas sinusoidais coincidem, pois 0,2V não é suficiente para fazer o díodo conduzir, por isso a tensão do canal 2 é igual à do canal 1:
 
 \begin{figure}[h]
-\centerline{\fbox{\includegraphics[width=0.6\textwidth]{./Imagens/parte1_ex2_02v_1.jpg}}}
+\centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/parte1_ex2_02v_1.jpg}}}
 \caption{Vertical: 0,1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{grafico_12_02_osciloscopio}
 \end{figure}
 
 O díodo limita a tensão do canal 2 para 0,7V (tal como determinado na pergunta 1), sendo a tensão no canal 1 de 2V. Podemos verificar este feito na imagem seguinte: 
 
 \begin{figure}[h]
-\centerline{\fbox{\includegraphics[width=0.6\textwidth]{./Imagens/parte1_ex2_2v_1.jpg}}}
+\centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/parte1_ex2_2v_1.jpg}}}
 \caption{Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{grafico_12_02_osciloscopio}
 \end{figure}
 
+\newpage
 \subsection{Circuitos limitadores com díodos}
-\hbox{\emph{\textbf{Pergunta 3:}\newline}}
-
 \begin{figure}[h]
 \centerline{\fbox{\includegraphics[width=0.35\textwidth]{./Imagens/parte1_ex3.png}}}
 \caption{$V_{in}$=10V, 1kHz}\label{circuito13}
 \end{figure}
+
+\hbox{\emph{\textbf{Pergunta 3:}\newline}}
+
+
 Através da expressão $V = R*I_D$ obtém-se o valor de $R_1$:\newline
 \centerline{$I_D = \frac{V_{in} - V_{out}}{R_1} \Leftrightarrow 10^-3 = \frac{10-1,8}{R_1} \Leftrightarrow R_1 = \frac{8,2}{10^-3} \simeq 8,2k\Omega$}\\
 \vspace{0.1cm}
