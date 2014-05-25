@@ -178,7 +178,7 @@ Se uma das entradas estiver a 0, a corrente vai fluir através dela baixando a t
 \newpage
 
 \begin{figure}[h]
-  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/cmos_grafico.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.4\textwidth]{./Imagens/cmos_grafico.jpg}}}
   \caption{DIODOODO FALTAA!!! \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
 \end{figure}
 
@@ -199,11 +199,11 @@ No caso do BJT e NMOS quando $V_i$/$V_{in}$ é 1 lógico (+5V), há queda de ten
 
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/BJT.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/BJT.jpg}}}
   \caption{\\Função lógica \\implementada pelo BJT. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
 \endminipage\hfill
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/NMOS.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/NMOS.jpg}}}
   \caption{\\Função lógica \\implementada pelo NMOS. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{fig:nmos}
 \endminipage\hfill
 \end{figure}
@@ -212,14 +212,14 @@ No caso do BJT e NMOS quando $V_i$/$V_{in}$ é 1 lógico (+5V), há queda de ten
 Para o PMOS quando $V_{in}$ é 0 lógico (0V), $V_{OUT}$ é igual a $V_{DD}$.
 
 \begin{figure}[h]
-  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/pmos_grafico.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/pmos_grafico.jpg}}}
   \caption{Função lógica implementada pelo PMOS. \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
 \end{figure}
 
 No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente passando $V_{DD}$ e $M_2$ fica em corte, ficando portanto $V_{OUT}$ = $V_{DD}$.
 
 \begin{figure}[h]
-  \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/cmos_grafico.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/cmos_grafico.jpg}}}
   \caption{\\Função lógica implementada pelo CMOS. \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
 \end{figure}
 
@@ -227,29 +227,30 @@ No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente 
 \subsection{Voltage Transfer Characteristic (VTC) de cada um dos circuitos}
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/BJT.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/BJT.jpg}}}
   \caption{\\VTC BJT FALTAAAA. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
 \endminipage\hfill
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/nmos_vtc.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/nmos_vtc.jpg}}}
   \caption{\\VTC NMOS \\Vertical: 1V/div ; \\Horizontal: 1V/div }\label{fig:nmos}
 \endminipage\hfill
 \end{figure}
 
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/pmos_vtc.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/pmos_vtc.jpg}}}
   \caption{\\VTC PMOS \\Vertical: 1V/div ($V_{out}$); \\Horizontal: 1V/div ($V_{in}$)}
 \endminipage\hfill
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/cmos_vtc.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/cmos_vtc.jpg}}}
   \caption{\\VTC CMOS \\Vertical: 1V/div ($V_{out}$); \\Horizontal: 1V/div ($V_{in}$)}
 \endminipage\hfill
 \end{figure}
 
+\newpage
 \subsection{Comparação dos VTC das quatro portas}
 Através das imagens acima, observa-se que a porta CMOS é a mais ideal na mudança do nível lógico. Ao contrário das outras portas, em que temos durante algum tempo zona de saturação na mudança de nível, no CMOS, esta alteração é repentina, daí ser a porta mais ideal. Esta situação é explicada pelo facto de que o CMOS é construído com base nas portas NMOS e PMOS, ou seja, quando um está a conduzir, o outro está em corte, sendo que apenas em  $\frac{V_{DD}}{2}$ ambas se encontram em saturação.
-\newpage
+
 \subsection{Medição e comparação do tempo de propagação de cada gate ligando um condensador}
 
 O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela responde a uma mudança nas suas entradas. O atraso associado a uma mudança H $\rightarrow$ L na saída designa-se por $t_{pHL}$ e uma mudança de L $\rightarrow$ H é $t_{pLH}$. Então o $t_p$ é a media:
@@ -258,22 +259,22 @@ O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela 
 
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/cmos_com_condensador_grafico.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/cmos_com_condensador_grafico.jpg}}}
   \caption{\\Gráfico BJT com condensador  FALTA\\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
 \endminipage\hfill
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/nmos_vtc.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/nmos_vtc.jpg}}}
   \caption{\\Gráfico NMOS com condensador FALTA \\Vertical: 1V/div ; \\Horizontal: 1V/div }\label{fig:nmos}
 \endminipage\hfill
 \end{figure}
 
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/pmos_grafico_condensador.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/pmos_grafico_condensador.jpg}}}
   \caption{\\Gráfico PMOS com condensador \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
 \endminipage\hfill
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/cmos_com_condensador_grafico.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/cmos_com_condensador_grafico.jpg}}}
   \caption{\\Gráfico CMOS com condensador \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A) }\label{fig:nmos}
 \endminipage\hfill
 \end{figure}
