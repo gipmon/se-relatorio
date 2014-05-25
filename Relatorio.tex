@@ -231,8 +231,8 @@ No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente 
   \caption{\\VTC BJT FALTAAAA. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
 \endminipage\hfill
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/NMOS.jpg}}}
-  \caption{\\VTC NMOS FALTAAAAA \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{fig:nmos}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/nmos_vtc.jpg}}}
+  \caption{\\VTC NMOS \\Vertical: 1V/div ; \\Horizontal: 1V/div }\label{fig:nmos}
 \endminipage\hfill
 \end{figure}
 
@@ -248,7 +248,7 @@ No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente 
 \end{figure}
 
 \subsection{Comparação dos VTC das quatro portas}
-
+Através das imagens acima, observa-se que a porta CMOS é a mais ideal na mudança do nível lógico. Ao contrário das outras portas, em que temos durante algum tempo zona de saturação na mudança de nível, no CMOS, esta alteração é repentina, daí ser a porta mais ideal. Esta situação é explicada pelo facto de que o CMOS é construído com base nas portas NMOS e PMOS, ou seja, quando um está a conduzir, o outro está em corte, sendo que apenas em  $\frac{V_{DD}}{2}$ ambas se encontram em saturação.
 \newpage
 \subsection{Medição e comparação do tempo de propagação de cada gate ligando um condensador}
 
@@ -256,9 +256,41 @@ O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela 
 
 \centerline{$t_p = \frac{t_{pHL}+t_{pLH}}{2}$}
 
-** vou por aqui as imagens que faltam do condensador e gráficos **
+\begin{figure}[!htb]
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/cmos_com_condensador_grafico.jpg}}}
+  \caption{\\Gráfico BJT com condensador  FALTA\\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
+\endminipage\hfill
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/nmos_vtc.jpg}}}
+  \caption{\\Gráfico NMOS com condensador FALTA \\Vertical: 1V/div ; \\Horizontal: 1V/div }\label{fig:nmos}
+\endminipage\hfill
+\end{figure}
 
-\newpage
+\begin{figure}[!htb]
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/pmos_grafico_condensador.jpg}}}
+  \caption{\\Gráfico PMOS com condensador \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
+\endminipage\hfill
+\minipage{0.5\textwidth}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{Imagens/cmos_com_condensador_grafico.jpg}}}
+  \caption{\\Gráfico CMOS com condensador \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A) }\label{fig:nmos}
+\endminipage\hfill
+\end{figure}
+BJT:
+$t_p = \frac{t_{pHL}+t_{pLH}}{2} = $
+\newline\newline
+NMOS:
+$t_p = \frac{t_{pHL}+t_{pLH}}{2} = $
+\newline\newline
+PMOS:
+$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,2 ms$
+\newline\newline
+CMOS:
+$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,06ms$
+\newline
+Conclui-se com isto que a porta mais rápida é a CMOS, pois é a que apresenta um menor tempo de propagação, isto é tempo que demora a mudar de nível lógico.
+\newline\newline
 \section{Parte III - Aplicações	de	Circuitos	Lógicos	CMOS}
 \begin{figure}[h]
   \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/parte3circuito1.jpg}}}
