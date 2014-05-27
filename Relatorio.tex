@@ -120,12 +120,13 @@ Através da expressão $V = R*I_D$ obtém-se o valor de $R_1$:\newline
 
 Para obter o valor de $V_{DC}$, basta utilizar a expressão $V_{out} = V_D + V_{DC}$:
 \centerline{$ 1,8 = 0,6 + V_{DC} \Leftrightarrow V_{DC} = 1,2V$}
+\vspace{0.2cm}
 
 Como podemos verificar na imagem abaixo, o circuito ficou limitado a 1,8 V como era pretendido:
 
 \begin{figure}[h]
-\centerline{\fbox{\includegraphics[width=0.55\textwidth]{./Imagens/parte1_ex3.jpg}}}
-\caption{ESTA IMAGEM ESTÁ MAL TEMOS DE LA VOLTAR e trazer divisões certas}\label{grafico_1c_osciloscopio}
+\centerline{\fbox{\includegraphics[width=0.55\textwidth]{./Imagens/parte1_ex3_novo.jpg}}}
+\caption{Vertical: 2V/div (ambos); Horizontal: 0,2ms/div (Time A)}\label{grafico_1c_osciloscopio}
 \end{figure}
 
 \newpage
@@ -231,8 +232,8 @@ No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente 
 \subsection{Voltage Transfer Characteristic (VTC) de cada um dos circuitos}
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/BJT.jpg}}}
-  \caption{\\VTC BJT FALTAAAA. \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/bjt_vtc.jpg}}}
+  \caption{\\VTC BJT \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
 \endminipage\hfill
 \minipage{0.5\textwidth}
   \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/nmos_vtc.jpg}}}
@@ -263,15 +264,14 @@ O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela 
 
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/cmos_com_condensador_grafico.jpg}}}
-  \caption{\\Gráfico BJT com condensador  FALTA\\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/bjt_condensador_grafico.jpg}}}
+  \caption{\\Gráfico BJT com condensador\\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{bjt}
 \endminipage\hfill
 \minipage{0.5\textwidth}
-  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/nmos_vtc.jpg}}}
-  \caption{\\Gráfico NMOS com condensador FALTA \\Vertical: 1V/div ; \\Horizontal: 1V/div }\label{fig:nmos}
+  \centerline{\fbox{\includegraphics[width=0.8\textwidth]{Imagens/nmos_condensador_grafico.jpg}}}
+  \caption{\\Gráfico NMOS com condensador \\Vertical: 1V/div ; \\Horizontal: 0,2ms/div (Time A) }\label{fig:nmos}
 \endminipage\hfill
 \end{figure}
-
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
   \centerline{\fbox{\includegraphics[width=0.8\textwidth]{./Imagens/pmos_grafico_condensador.jpg}}}
@@ -282,20 +282,24 @@ O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela 
   \caption{\\Gráfico CMOS com condensador \\Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A) }\label{fig:nmos}
 \endminipage\hfill
 \end{figure}
+
+\newpage
 BJT:
-$t_p = \frac{t_{pHL}+t_{pLH}}{2} = $
+$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,1 ms$
 \newline\newline
 NMOS:
-$t_p = \frac{t_{pHL}+t_{pLH}}{2} = $
+$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,18 ms$
 \newline\newline
 PMOS:
 $t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,2 ms$
 \newline\newline
 CMOS:
-$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,06ms$
-\newline
-Conclui-se com isto que a porta mais rápida é a CMOS, pois é a que apresenta um menor tempo de propagação, isto é tempo que demora a mudar de nível lógico.
+$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,06 ms$
 \newline\newline
+
+Conclui-se com isto que a porta mais rápida é a CMOS, pois é a que apresenta um menor tempo de propagação, isto é, o tempo que demora a mudar de nível lógico.
+
+\newpage
 \section{Parte III - Aplicações	de	Circuitos	Lógicos	CMOS}
 \begin{figure}[h]
   \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/parte3circuito1.jpg}}}
@@ -319,11 +323,11 @@ $V_{tr}$ & $V_{i}$ & $V_{0}$ \\ \hline
 
 \subsection{Valores de $V_{iH}$ e de $V_{iL}$}
 \begin{figure}[h]
-  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/parte3_exercicio2.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/parte3_ex1_grafico.jpg}}}
   \caption{Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{cmos}
 \end{figure}
 
-Valor de $V_{iH}$, quando o sinal triangular sobe o $V_0$ passa de 1 para 0, aos 4V e de $V_{iL}$, quando o sinal triangular desce o $V_0$ passa de 0 para 1 aos 1,4V.
+Valor de $V_{iH}$, quando o sinal triangular sobe o $V_0$ passa de 1 para 0, aos 3,2V e de $V_{iL}$, quando o sinal triangular desce o $V_0$ passa de 0 para 1 aos 2V.
 
 \newpage
 \begin{figure}[h]
@@ -334,7 +338,7 @@ Valor de $V_{iH}$, quando o sinal triangular sobe o $V_0$ passa de 1 para 0, aos
 \subsection{Verificar que o circuito funciona como gerador de onda rectangular}
 
 \begin{figure}[h]
-  \centerline{\fbox{\includegraphics[width=0.4\textwidth]{./Imagens/parte3_exercicio3.jpg}}}
+  \centerline{\fbox{\includegraphics[width=0.4\textwidth]{./Imagens/parte3exercicio3_grafico.jpg}}}
   \caption{Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{cmos}
 \end{figure}
 
@@ -358,8 +362,15 @@ $V_{rt}$ & $V_{1}$ & $V_{0} = \neg(\neg(V_{rt}*V_{1})*\neg(V{rt}*V{1}))$ \\ \hli
 $V_1$ comporta-se como a saída de um circuito RC passa-baixo porque permite a passagem de baixas frequências sem dificuldades e atenua a amplitude das frequências maiores que a frequência de corte.
 \vspace{0.5cm}
 
-\subsection{Calcular para $V_0$, $t_{on}$, T e duty cycle. Explicar porquê que duty cycle $\neq$ 50\%}
+\subsection{Calcular para $V_0$ o $t_{on}$, T e duty cycle ($\delta$). Explicar porquê que $\delta$ $\neq$ 50\%}
 
+$t_{on} = 1,5V$ e $T = 3,4V$ então:
+\vspace{0.3cm}
+
+$\delta = \frac{t_{on}}{T}\times100 = \frac{1,5}{3,4}\times100 \simeq 44 \% $
+\vspace{0.3cm}
+
+É $\neq$ de 50\% porque o condensador demora mais tempo a carregar do que a descarregar, estando menos tempo a 1 do que a 0.
 
 \subsection{dfh}
 
