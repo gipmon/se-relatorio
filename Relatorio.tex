@@ -18,7 +18,7 @@
 \fancyhead{}
 \renewcommand*\thesection{\thechapter\arabic{section}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\begin{document} 
+\begin{document}
 
 \input{./titulo.tex} %Titulo do Relatorio
 \renewcommand{\headrulewidth}{0pt}
@@ -27,7 +27,7 @@
 \vspace*{\fill}
 \textbf{Introdução  d  ?? Reusmo??:}
 \begingroup
-normalmente a introdução é feita 
+normalmente a introdução é feita
 \endgroup
 \vspace*{\fill}
 %Parte do resumo!
@@ -53,7 +53,7 @@ normalmente a introdução é feita
 \caption{Circuito com díodo para determinar a característica i-v}\label{diodo_parte1}
 \end{figure}
 
-\subsection{Característica i-v de um díodo} 
+\subsection{Característica i-v de um díodo}
 \hbox{\emph{\textbf{Pergunta 1:}}\newline\newline}
 
 Para calcular a característica i-v de um díodo, usando os valores obtidos no osciloscópio e a fórmula $i = \frac{V\textsubscript{i}-V\textsubscript{0}}{R}$ (A) obtemos a seguinte tabela e gráfico:\newline
@@ -97,7 +97,7 @@ As duas ondas sinusoidais coincidem, pois 0,2V não é suficiente para fazer o d
 \caption{Vertical: 0,1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{grafico_12_02_osciloscopio}
 \end{figure}
 
-O díodo limita a tensão do canal 2 para 0,7V (tal como determinado na pergunta 1), sendo a tensão no canal 1 de 2V. Podemos verificar este feito na imagem seguinte: 
+O díodo limita a tensão do canal 2 para 0,7V (tal como determinado na pergunta 1), sendo a tensão no canal 1 de 2V. Podemos verificar este feito na imagem seguinte:
 
 \begin{figure}[h]
 \centerline{\fbox{\includegraphics[width=0.5\textwidth]{./Imagens/parte1_ex2_2v_1.jpg}}}
@@ -157,7 +157,7 @@ Como podemos verificar na imagem abaixo, o circuito ficou limitado a 1,8 V como 
 \end{figure}
 
 \subsection{Função lógica implementada pelos circuitos anteriores}
-A função implementada pelo díodo é um AND. 
+A função implementada pelo díodo é um AND.
 
 \begin{table}[h]
 \centerline{
@@ -183,8 +183,8 @@ Se uma das entradas estiver a 0, a corrente vai fluir através dela baixando a t
 \newpage
 
 \begin{figure}[h]
-  \centerline{\fbox{\includegraphics[width=0.4\textwidth]{./Imagens/cmos_grafico.jpg}}}
-  \caption{DIODOODO FALTAA!!! \\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
+  \centerline{\fbox{\includegraphics[width=0.4\textwidth]{./Imagens/diodo_2_grafico.jpg}}}
+  \caption{\\Vertical: 1V/div (ambos); Horizontal: 0,1ms/div (Time A)}\label{cmos}
 \end{figure}
 
 A função lógica implementada pelos quatro circuitos (BJT, NMOS, PMOS e CMOS) é um NOT.
@@ -295,11 +295,10 @@ $t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,2 ms$
 \newline\newline
 CMOS:
 $t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,06 ms$
-\newline\newline
+\vspace{0.4cm}
 
 Conclui-se com isto que a porta mais rápida é a CMOS, pois é a que apresenta um menor tempo de propagação, isto é, o tempo que demora a mudar de nível lógico.
 
-\newpage
 \section{Parte III - Aplicações	de	Circuitos	Lógicos	CMOS}
 \begin{figure}[h]
   \centerline{\fbox{\includegraphics[width=0.3\textwidth]{./Imagens/parte3circuito1.jpg}}}
