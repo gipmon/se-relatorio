@@ -25,9 +25,9 @@
 
 %Parte do resumo!
 \vspace*{\fill}
-\textbf{Introdução  d  ?? Reusmo??:}
+\textbf{Introdução:}
 \begingroup
-normalmente a introdução é feita
+Neste trabalho 2 pretende-se estudar as características e utilizações das portas lógicas NMOS, PMOS, CMOS e do BJT e de um díodo.
 \endgroup
 \vspace*{\fill}
 %Parte do resumo!
@@ -114,7 +114,7 @@ O díodo limita a tensão do canal 2 para 0,7V (tal como determinado na pergunta
 \hbox{\emph{\textbf{Pergunta 3:}\newline}}
 
 
-Através da expressão $V = R*I_D$ obtém-se o valor de $R_1$:\newline
+Através da expressão $V = R \times I_D$ obtém-se o valor de $R_1$:\newline
 \centerline{$I_D = \frac{V_{in} - V_{out}}{R_1} \Leftrightarrow 10^-3 = \frac{10-1,8}{R_1} \Leftrightarrow R_1 = \frac{8,2}{10^-3} \simeq 8,2k\Omega$}\\
 \vspace{0.1cm}
 
@@ -256,11 +256,11 @@ No CMOS se o $V_{in}$ for igual a 0 lógico (0V), em $M_1$ deixa fluir corrente 
 \subsection{Comparação dos VTC das quatro portas}
 Através das imagens acima, observa-se que a porta CMOS é a mais ideal na mudança do nível lógico. Ao contrário das outras portas, em que temos durante algum tempo zona de saturação na mudança de nível, no CMOS, esta alteração é repentina, daí ser a porta mais ideal. Esta situação é explicada pelo facto de que o CMOS é construído com base nas portas NMOS e PMOS, ou seja, quando um está a conduzir, o outro está em corte, sendo que apenas em  $\frac{V_{DD}}{2}$ ambas se encontram em saturação.
 
-\subsection{Medição e comparação do tempo de propagação de cada gate ligando um condensador}
+\subsection{Medição e comparação do tempo de subida e descida de cada gate ligando um condensador}
 
-O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela responde a uma mudança nas suas entradas. O atraso associado a uma mudança H $\rightarrow$ L na saída designa-se por $t_{pHL}$ e uma mudança de L $\rightarrow$ H é $t_{pLH}$. Então o $t_p$ é a media:
+O tempo de subida e descida $t_{sd}$ de uma porta digital indica a rapidez com que ela responde a uma mudança nas suas entradas. O atraso associado a uma mudança H $\rightarrow$ L na saída designa-se por $t_{pHL}$ e uma mudança de L $\rightarrow$ H é $t_{pLH}$. Então o $t_{sd}$ é a media:
 
-\centerline{$t_p = \frac{t_{pHL}+t_{pLH}}{2}$}
+\centerline{$t_{sd} = \frac{t_{pHL}+t_{pLH}}{2}$}
 
 \begin{figure}[!htb]
 \minipage{0.5\textwidth}
@@ -285,19 +285,19 @@ O tempo de propagação $t_p$ de uma porta digital indica a rapidez com que ela 
 
 \newpage
 BJT:
-$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,1 ms$
+$t_{sd} = \frac{t_{pHL}+t_{pLH}}{2} = 0,1 ms$
 \newline\newline
 NMOS:
-$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,18 ms$
+$t_{sd} = \frac{t_{pHL}+t_{pLH}}{2} = 0,18 ms$
 \newline\newline
 PMOS:
-$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,2 ms$
+$t_{sd} = \frac{t_{pHL}+t_{pLH}}{2} = 0,2 ms$
 \newline\newline
 CMOS:
-$t_p = \frac{t_{pHL}+t_{pLH}}{2} = 0,06 ms$
+$t_{sd} = \frac{t_{pHL}+t_{pLH}}{2} = 0,06 ms$
 \vspace{0.4cm}
 
-Conclui-se com isto que a porta mais rápida é a CMOS, pois é a que apresenta um menor tempo de propagação, isto é, o tempo que demora a mudar de nível lógico.
+Conclui-se com isto que a porta mais rápida é a CMOS, pois é a que apresenta um menor tempo de subida e descida, isto é, o tempo que demora a mudar de nível lógico.
 
 \section{Parte III - Aplicações	de	Circuitos	Lógicos	CMOS}
 \begin{figure}[h]
@@ -371,6 +371,12 @@ $\delta = \frac{t_{on}}{T}\times100 = \frac{1,5}{3,4}\times100 \simeq 44 \% $
 
 É $\neq$ de 50\% porque o condensador demora mais tempo a carregar do que a descarregar, estando menos tempo a 1 do que a 0.
 
-\subsection{dfh}
+\subsection{Gerador de “bursts”}
+\begin{figure}[h]
+  \centerline{\fbox{\includegraphics[width=0.4\textwidth]{./Imagens/parte3exercicio6.jpg}}}
+  \caption{Vertical: 1V/div (ambos); \\Horizontal: 0,2ms/div (Time A)}\label{cmos}
+\end{figure}
+
+Obtivémos um gerador de bursts. Quando o sinal vai a 1 a saída toma o valor don't care.
 
 \end{document}
